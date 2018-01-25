@@ -28,9 +28,9 @@ def escape(self,target,distance_to_nearest_enemy, min_distance = 25):
         bottom_right_distance = hlt.entity.Entity.calculate_distance_between(ship, hlt.entity.Position(240,160))
         _min = min(top_left_distance,top_right_distance,bottom_left_distance,bottom_right_distance)        
         if top_left_distance == _min: return hlt.entity.Position(3,3)
-        if top_right_distance == _min: return hlt.entity.Position(237,3)
-        if bottom_left_distance == _min: return hlt.entity.Position(3,157)
-        if bottom_right_distance == _min: return hlt.entity.Position(237,157)        
+        elif top_right_distance == _min: return hlt.entity.Position(237,3)
+        elif bottom_left_distance == _min: return hlt.entity.Position(3,157)
+        elif bottom_right_distance == _min: return hlt.entity.Position(237,157)        
         else: logging.info('ESCAPE ERROR')
     else:
         logging.info('Going circular')
